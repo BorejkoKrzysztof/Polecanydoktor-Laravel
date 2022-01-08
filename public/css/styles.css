@@ -1,0 +1,2174 @@
+:root {
+    --darkBlueColor: rgb(51, 28, 185);
+    --seaBlueColor: rgb(4, 199, 248);
+    --normalBlueColor: rgb(2, 49, 255);
+    --lightOrangeColor: rgb(230, 164, 42);
+    --lightRedColor: rgb(247, 41, 14);
+}
+
+html {
+    font-size: calc(1vh + 1vw);
+    font-family: 'Calibri';
+    overflow-x: hidden;
+}
+
+/* mobile devices -- medium screen smartphones */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--seaBlueColor);
+}
+
+nav.Desktop {
+    display: none;
+}
+
+nav.Mobile {
+    width: 13vw;
+    height: 13vw;
+    max-width: 60px;
+    max-height: 60px;
+    background-color: var(--darkBlueColor);
+    border: solid 2px var(--seaBlueColor);
+    border-radius: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 4vh;
+    right: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+.activeIcon {
+    background-color: var(--seaBlueColor) !important;
+    transform: rotate(90deg) !important;
+}
+
+nav.Mobile i {
+    font-size: max(32px, 2rem);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.NavMobile {
+    padding-top: 10vh;
+    background-color: var(--darkBlueColor);
+    position: fixed;
+    height: 100vh;
+    width: 75vw;
+    right: -80vw;
+    z-index: 1;
+    text-align: start;
+    transition: 1.5s;
+    z-index: 9;
+}
+
+.NavMobileActive {
+    right: 0;
+}
+
+.NavMobile p:nth-child(1) {
+    text-align: center;
+}
+
+.NavMobile p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.NavMobile p i,
+.NavMobile hr {
+    color: var(--seaBlueColor);
+}
+
+.NavMobile ul {
+    list-style-type: none;
+    color: white;
+}
+
+.NavMobile ul li {
+    margin: 5vh 0 5vh 15vw;
+}
+
+.NavMobile ul li a:visited,
+.NavMobile ul li a:link,
+.NavMobile ul li a:active {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.NavMobile ul li:nth-of-type(5) a {
+    color: var(--lightRedColor);
+}
+
+nav.DashboardDesktopMainNav,
+div.DasboardDesktopNav {
+    display: none;
+}
+
+
+.Banner {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.BannerBig {
+    height: 370vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.MainPageBannerPhoto {
+    background-image: url('/assets/img/small/mainBanner/doctorBannerSmall.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80%;
+}
+
+.BannerCircle {
+    height: 60vw;
+    width: 60vw;
+    background-color: var(--darkBlueColor);
+    position: absolute;
+    top: 50vh;
+    left: calc(50vw - 60vw / 2);
+    border-radius: 100%;
+    opacity: 0;
+    animation: 2.5s forwards 0s 1 mainSmallPageBannerCircleAnimation;
+}
+
+.BannerCircle div {
+    position: relative;
+    top: 25%;
+    left: 20%;
+    height: 50%;
+    width: 50%;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Calibri';
+}
+
+.BannerCircle div i {
+    color: var(--seaBlueColor);
+    opacity: 0;
+    animation: 5.5s forwards 0s 1 mainPageBannerCircleParagraphs;
+}
+
+.BannerCircle div p {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation: 5.5s forwards 0s 1 mainPageBannerCircleParagraphs;
+}
+
+.BannerCircle div p:nth-child(1) {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.BannerCircle div p:nth-last-child(1) {
+    color: var(--seaBlueColor);
+}
+
+.PageContent div {
+    height: 100vh;
+}
+
+.PageContent div:nth-child(1) {
+    margin: 0 4rem 0 4rem;
+    height: 40vh;
+    padding-top: 6vh;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.PageContent div:nth-of-type(1) h2 {
+    margin-top: min(400px, 2.5rem);
+    font-size: 2rem;
+    font-family: fantasy;
+    padding-right: 2rem;
+    margin-bottom: min(400px, 2.5rem);
+}
+
+.PageContent div:nth-of-type(1) h2 i {
+    color: var(--seaBlueColor);
+}
+
+.PageContent div:nth-of-type(1) p {
+    font-size: 1.5rem;
+    color: grey;
+    margin-bottom: min(400px, 2.5rem);
+
+}
+
+.PageContent div:nth-of-type(1) p span {
+    color: var(--seaBlueColor);
+    font-weight: bold;
+}
+
+.title1,
+.title2,
+.title3 {
+    margin: 0 4rem 0 4rem;
+    text-align: start;
+    /* font-size: 1.5rem; */
+    font-size: 1.2rem;
+    transition: 1s;
+}
+
+.title1 p,
+.title2 p,
+.title3 p {
+    color: grey;
+    margin-bottom: 7.5vh;
+}
+
+.title2,
+.title3 {
+    margin-top: 7vh;
+}
+
+.img1,
+.img2,
+.img3 {
+    width: 25rem;
+    height: 20rem;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    transition: 2s;
+    opacity: 0;
+}
+
+.img1,
+.img3 {
+    left: 3.5rem;
+    margin-right: 0;
+}
+
+.img2 {
+    margin-left: 3vw;
+}
+
+.img1 {
+    background-image: url('/assets/img/small/waitingRoomSmall.jpg');
+    background-position: 95%;
+}
+
+.img2 {
+    background-image: url('/assets/img/small/iphoneDoctorSmall.jpg');
+    background-position: 20%;
+}
+
+.img3 {
+    background-image: url('/assets/img/small/doctorSmall.jpg');
+    background-position: 0 30%;
+    margin-bottom: 10vh;
+}
+
+.buisnessCircle1,
+.buisnessCircle2,
+.buisnessCircle3 {
+    display: inline-block;
+    width: 25rem;
+    height: 25rem;
+    position: absolute;
+    border-radius: 100%;
+    z-index: -1;
+}
+
+.buisnessCircle1,
+.buisnessCircle3 {
+    left: -1vw;
+    margin-top: -4.5vh;
+}
+
+.buisnessCircle2 {
+    left: 20vw;
+    margin-top: -4.5vh;
+}
+
+.listSpace {
+    display: none;
+}
+
+.buisnessCircle1 {
+    background-color: var(--darkBlueColor);
+}
+
+.buisnessCircle2 {
+    background-color: var(--lightOrangeColor);
+}
+
+.buisnessCircle3 {
+    background-color: var(--lightRedColor);
+}
+
+
+footer :nth-child(1) {
+    height: 8vh;
+    background-color: var(--darkBlueColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer :nth-child(1) p {
+    width: 100vw;
+    font-size: 40px;
+    color: white;
+
+}
+
+footer :nth-child(1) p i {
+    color: var(--seaBlueColor);
+    margin: 0;
+    padding: 0;
+}
+
+footer :nth-child(2) {
+    height: 6vh;
+    padding-top: 2vh;
+    background-color: var(--darkBlueColor);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+footer :nth-child(2) a {
+    line-height: 8vh;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: white;
+}
+
+footer :nth-child(3) {
+    color: white;
+    height: 3vh;
+}
+
+footer :nth-child(3) p {
+    margin: 0;
+}
+
+footer :nth-child(3) p i {
+    color: var(--seaBlueColor);
+    margin: 0;
+}
+
+.LoginBanner {
+    background-color: royalblue;
+}
+
+.LoginBannerImg {
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/small/LoginBanner/LoginBannerSmall.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 40%;
+    opacity: .4;
+}
+
+.LoginForm {
+    position: absolute;
+    width: 80vw;
+    height: 70vh;
+    background-color: #fff;
+    left: calc(100vw - 50% - 80vw / 2);
+    top: 12rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.LoginForm h2 {
+    font-size: 3rem;
+    font-family: 'Calibri';
+    color: var(--darkBlueColor);
+}
+
+div.LoginForm h2 i {
+    color: var(--seaBlueColor);
+}
+
+div.LoginForm div {
+    position: relative;
+    width: 85%;
+    height: 70%;
+    border: 4px solid var(--darkBlueColor);
+    border-radius: 25px;
+    top: 0;
+}
+
+div.LoginForm div form {
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 3rem;
+    font-family: 'Calibri';
+    text-align: center;
+}
+
+div.LoginForm div form input {
+    align-self: center;
+    font-size: 1.5rem;
+    border: 2px solid var(--darkBlueColor);
+    border-radius: 5px;
+}
+
+div.LoginForm div form :nth-last-child(1) {
+    margin-top: 3rem;
+    margin-bottom: 1.8rem;
+    padding: .5rem;
+    font-size: 3rem;
+    background-color: #fff;
+    border: 2px solid var(--darkBlueColor);
+    border-radius: 15px;
+    color: var(--darkBlueColor);
+}
+
+div.LoginForm div form :nth-last-child(1) :hover {
+    background-color: var(--seaBlueColor);
+}
+
+div.LoginForm div p {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0 .2rem 0 .2rem;
+    color: grey;
+}
+
+
+div.LoginForm div p a {
+    font-weight: bold;
+    color: var(--seaBlueColor);
+}
+
+div.DoctorFiltering {
+    position: absolute;
+    background-color: #fff;
+    border-right: 3px solid var(--darkBlueColor);
+    height: 100vh;
+    width: 70vw;
+    top: 0;
+    left: calc(-70vw - 3px);
+    transition: 1s;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.DoctorFiltering form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2vw 0 2vw;
+}
+
+div.DoctorFiltering form label {
+    font-size: 2rem;
+}
+
+div.DoctorFiltering form input {
+    font-size: 2rem;
+    border: 2px solid var(--darkBlueColor);
+}
+
+div.DoctorFiltering form :nth-last-child(1) {
+    margin: 15vh 4vw 0 4vw;
+    background-color: white;
+    color: var(--seaBlueColor);
+    border: solid 2px var(--seaBlueColor);
+    border-radius: 25px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.DoctorsFilteringActive {
+    left: 0 !important;
+}
+
+div.VerticalPanel {
+    display: none;
+}
+
+div.FilteringButton {
+    position: absolute;
+    background-color: var(--darkBlueColor);
+    bottom: 10vh;
+    left: 70vw;
+    width: 13vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 2;
+}
+
+div.FilteringButton i {
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.FilteringButtonActive {
+    left: 70vw !important;
+    background-color: var(--seaBlueColor) !important;
+}
+
+.ParagraphIconActive {
+    transform: rotate(-180deg) !important;
+}
+
+.SearchResultsContent {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+div.DoctorFiltering h2,
+div.SearchResultsContent h2,
+div.ScrollVisits h2,
+div.ScrollDoctors h2 {
+    padding-top: 2vh;
+    padding-left: 1vw;
+    font-size: 2.5rem;
+}
+
+div.DoctorFiltering h2 i,
+div.SearchResultsContent h2 i,
+div.ScrollVisits h2 i,
+div.ScrollDoctors h2 i {
+    color: var(--seaBlueColor);
+}
+
+div.DoctorFiltering h2 i {
+    font-size: 20rem;
+    padding-left: 2vw;
+}
+
+.DoctorInfo {
+    padding: 4vh 12vw 0 20vw;
+    border-top: solid 5px var(--seaBlueColor);
+    height: 44vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.doctorButtons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.LineBreak {
+    display: none;
+}
+
+div.DoctorsRating {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.doctorButtons button {
+    margin: 0 2vw 0 2vw;
+    font-size: 1.2rem;
+    padding: .7vh .7vw .7vh .7vw;
+    border-radius: 15px;
+}
+
+div.doctorButtons :nth-child(1) {
+    border: solid 2px var(--darkBlueColor);
+    background-color: white;
+    color: var(--darkBlueColor);
+}
+
+div.doctorButtons :nth-child(2) {
+    border: solid 2px green;
+    background-color: white;
+    color: green;
+}
+
+.RegisterWrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.SkewBanner1,
+.SkewBanner2 {
+    overflow: hidden;
+    position: absolute;
+    display: inline;
+    transform: skewX(-66deg);
+    width: 100vw;
+    height: 100vh;
+    transition: 0s;
+}
+
+.SkewBanner1 {
+    left: 0;
+    transform-origin: 100% 0;
+}
+
+.SkewBanner2 {
+    right: 0;
+    transform-origin: 0 100%;
+}
+
+.DoctorRegisterBackground {
+    position: relative;
+    width: 199%;
+    height: 100%;
+    background-image: url('/assets/img/small/register/doctor2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 10%;
+    background-position-x: 0;
+    transform: skew(26deg);
+}
+
+.UserRegisterBackground {
+    position: relative;
+    width: 199%;
+    height: 100%;
+    background-image: url('/assets/img/small/register/patient.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 111% 10%;
+    transform: skew(26deg);
+    right: 100vw;
+}
+
+.registerUser,
+.registerDoctor {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    font-size: 2.1rem;
+    padding: .7rem .2rem .7rem .2rem;
+    border: solid 2px var(--darkBlueColor);
+    color: var(--darkBlueColor);
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.registerDoctor {
+    top: 15rem;
+    left: 10vw;
+}
+
+.registerUser {
+    bottom: 15rem;
+    right: 10vw;
+}
+
+.registerDoctor:hover,
+.registerUser:hover {
+    background-color: var(--darkBlueColor);
+    color: white;
+}
+
+.RegisterUserForm,
+.RegisterDoctorForm {
+
+    display: none;
+
+    width: 80vw;
+    height: 60vh;
+    position: absolute;
+    background-color: #fff;
+    top: 20vh;
+    left: calc(50vw - 40vw);
+    border-radius: 25px;
+    z-index: 5;
+    transition: .5s;
+}
+
+.RegisterUserForm form,
+.RegisterDoctorForm form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    padding-top: 2vh;
+}
+
+.RegisterUserForm i,
+.RegisterDoctorForm i {
+    cursor: pointer;
+    font-size: 5rem;
+    margin-top: 2vh;
+    margin-left: 60vw;
+    margin-bottom: 1vh;
+}
+
+.RegisterUserForm form input,
+.RegisterDoctorForm form input {
+    margin-bottom: 3vh;
+    border: 2px solid var(--darkBlueColor);
+}
+
+
+.RegisterUserForm form :nth-last-child(1),
+.RegisterDoctorForm form :nth-last-child(1) {
+    margin-top: 5vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border: 2px solid black;
+    font-size: 3rem;
+}
+
+
+.RegisterUserForm form label,
+.RegisterDoctorForm form label {
+    font-size: 2rem;
+}
+
+.EditProfile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5vh;
+}
+
+.EditProfile h2,
+.ScrollUsers h2 {
+    font-size: 2.2rem;
+    padding-top: 1.5vh;
+    padding-left: 1vw;
+}
+
+.EditProfile h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.EditProfile h2 i,
+.ScrollUsers h2 i {
+    color: var(--seaBlueColor);
+}
+
+.EditProfile p {
+    color: grey;
+    font-size: 1.5rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.EditProfile form {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 70vh;
+    align-self: center;
+    font-size: 2rem;
+}
+
+.EditProfile form input,
+.EditProfile form select {
+    border: solid 2px var(--darkBlueColor);
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 60vw;
+    height: 3vh;
+}
+
+.EditProfile form input:nth-last-of-type(1) {
+    align-self: center;
+    font-size: 2rem;
+    color: white;
+    background-color: var(--darkBlueColor);
+    border-radius: 5px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin-bottom: 2vh;
+    height: 5vh;
+}
+
+.EditProfile button {
+    background-color: var(--lightRedColor);
+    box-sizing: content-box;
+}
+
+.EditProfile button a {
+    color: white;
+    font-weight: bold;
+    font-style: 1.8rem;
+}
+
+.EditProfile button:hover {
+    color: var(--lightRedColor);
+    background-color: white;
+    border: solid 2px var(--lightRedColor);
+}
+
+.EditProfile button:hover a {
+    color: var(--lightRedColor);
+
+}
+
+.DoctorEditProfile {
+    height: 332vh !important;
+    align-items: center !important;
+}
+
+div.DeletingDesktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+div.DeletingDesktop div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.DeletingDesktop div button {
+    margin: 20vh 5vw 20vh 5vw;
+    font-size: 4rem;
+}
+
+div.DeletingDesktop div button a {
+    color: white;
+}
+
+div.DeletingDesktop div button:nth-of-type(1) {
+    background-color: var(--lightRedColor);
+}
+
+div.DeletingDesktop div button:nth-child(2) {
+    background-color: var(--darkBlueColor);
+}
+
+.UserDashboardInfo {
+    margin-top: 10vh;
+    text-align: center;
+}
+
+div.UserDashboardInfo h1 {
+    color: var(--darkBlueColor);
+    font-size: 3.5rem;
+}
+
+div.UserDashboardInfo h2 {
+    font-size: 2.5rem;
+}
+
+div.UserDashboardInfo p {
+    font-size: 3.5rem;
+    color: grey;
+}
+
+div.UserDashboardInfo i {
+    font-size: 7rem;
+    color: var(--seaBlueColor);
+}
+
+div.UserDashboardInfo div {
+    text-align: center;
+}
+
+div.UserDashboardInfo div p {
+    font-size: 2rem;
+    color: grey;
+}
+
+div.Banner div.AboutUs {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/small/AboutUsBanner/aboutUsBannerSmall.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
+}
+
+div.AboutUsContent {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 10vh;
+}
+
+.AboutUsContent h2 {
+    font-size: 4rem;
+    color: var(--darkBlueColor);
+    text-align: center;
+}
+
+.AboutUsContent p {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.AboutUsContent p span {
+    color: var(--seaBlueColor);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+div.CircleAboutUsButton {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background-color: var(--darkBlueColor);
+    border-radius: 100%;
+    top: 60vh;
+    left: calc(50vw - 30vw);
+    text-align: center;
+    line-height: 60vw;
+    animation: 8s linear AboutUsCircleChangeColor infinite;
+}
+
+div.CircleAboutUsButton p i {
+    font-size: 12rem;
+    color: white;
+    padding-top: 1.5rem;
+}
+
+.ScrollVisits,
+.ScrollDoctors,
+.ScrollUsers {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.Visit,
+.RateContent {
+    width: 80%;
+    height: 45vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 5vh;
+    border: solid 2px var(--seaBlueColor);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.RateContent {
+    font-size: 1.5rem;
+}
+
+.RateContent form div {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.RateContent form input:nth-last-child(1) {
+    margin-top: 2vh;
+    font-size: 2rem;
+    background-color: var(--darkBlueColor);
+    color: white;
+}
+
+.FormErrors {
+    list-style: none;
+    color: red;
+    margin-top: -16vh;
+}
+
+.RateContent form textarea {
+    box-sizing: border-box;
+    width: 80%;
+}
+
+.UserCreateAdminContent {
+    width: 90%;
+    height: 21vh;
+    border: solid 2px var(--seaBlueColor);
+    border-radius: 15px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.UserCreateAdminContent div h2 {
+    font-size: 1.1rem;
+}
+
+
+
+.UserCreateAdminContent button {
+    height: 5vh;
+    background-color: var(--darkBlueColor);
+    border: none;
+    position: relative;
+
+}
+
+.UserCreateAdminContent button a {
+    color: white;
+    font-weight: bold;
+}
+
+.searchDoctorAvatar {
+    width: 28vw;
+    height: 28vw;
+    border-radius: 100%;
+}
+
+div.DoctorProfile {
+    text-align: center;
+    margin-left: 12vw;
+    margin-right: 12vw;
+}
+
+div.DoctorProfile img.searchDoctorAvatarBig {
+    margin-top: 15vh;
+    width: 30vw;
+    height: 30vw;
+}
+
+.RegisterVisitForm {
+    text-align: center;
+    margin-top: 20vh;
+}
+
+/* mobile devices --  very small smartphones like iPhone SE*/
+@media screen and (max-width:380px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    .BannerCircle div p:nth-child(1) {
+        margin-bottom: 1rem;
+    }
+
+    .PageContent div:nth-child(1) {
+        margin-top: 2.5rem;
+        height: 55vh;
+    }
+
+    .LoginForm {
+        height: 80vh;
+        top: 9rem;
+    }
+}
+
+/* small and medium screen smartphones ORIENTATION LANDSCAPE */
+@media screen and (max-height:500px) {
+
+    .MainPageBannerPhoto {
+        background-position: 60% 20%;
+    }
+}
+
+@media screen and (min-width:580px) {
+
+    .MainPageBannerPhoto {
+        background-position: 60% 10%;
+    }
+
+
+
+}
+
+@media screen and (orientation:portrait),
+screen and (min-height:1000px) {
+
+    .BannerCircle {
+        height: calc(20vh + 20vw);
+        width: calc(20vh + 20vw);
+        left: calc(50vw - (20vh + 20vw) / 2);
+        animation: 2.5s forwards 0s 1 mainSmallPageBannerCircleAnimationPORTRAIT;
+        margin-top: 22vh;
+    }
+
+    .img2 {
+        position: relative;
+        left: calc(100vw - 29.5rem);
+    }
+
+    .LoginForm {
+        height: 80vh;
+        top: 9rem;
+    }
+
+    div.LoginForm div form {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (orientation:landscape) {
+
+    .scrollableInMobileNav {
+        position: relative;
+        overflow-y: scroll;
+        width: 100%;
+        height: 300px;
+    }
+
+    html {
+        font-size: calc(.85vh + 1.15vw);
+    }
+
+    .BannerCircle {
+        height: calc(20vh + 20vw);
+        width: calc(20vh + 20vw);
+        left: calc(50vw - (20vh + 20vw) / 2);
+        animation: 2.5s forwards 0s 1 mainSmallPageBannerCircleAnimationLANDSCAPE;
+    }
+
+    .NavMobile ul {
+        margin-left: 20vw;
+    }
+
+    .title1 {
+        margin-top: 25vh;
+    }
+
+    .title2,
+    .title3 {
+        margin-top: 40vh;
+    }
+
+    .title1,
+    .title3 {
+        margin-left: 60vw;
+    }
+
+    .title2 {
+        margin-right: 60vw;
+    }
+
+    .img1 {
+        margin-top: 5vh;
+    }
+
+    .img1,
+    .img2,
+    .img3 {
+        width: 30rem;
+        max-width: 40vw;
+        transform: translateY(-100%);
+        position: absolute;
+    }
+
+    .img1,
+    .img3 {
+        margin-left: 0;
+        left: 10rem;
+    }
+
+    .img2 {
+        margin-left: 0;
+        right: 13vw;
+    }
+
+    .buisnessCircle1,
+    .buisnessCircle2,
+    .buisnessCircle3 {
+        display: inline-block;
+        width: 25rem;
+        height: 25rem;
+        transform: translateY(-85%);
+    }
+
+    .buisnessCircle1 {
+        margin-top: 3vh;
+    }
+
+    .buisnessCircle1,
+    .buisnessCircle3 {
+        margin-left: 9vw;
+    }
+
+    .img3 {
+        right: 1.5rem;
+    }
+
+    div.ContentAnimation {
+        margin-bottom: 20vh;
+    }
+
+
+    footer :nth-of-type(1) {
+        height: 8vh;
+        min-height: 30px;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+    }
+
+    footer :nth-child(2) {
+        height: 15vh;
+        padding-top: 6vh;
+    }
+
+    .LoginForm {
+        width: 60vw;
+        height: 80vh;
+        top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    div.LoginForm h2 {
+        font-size: 2.5rem;
+        color: var(--darkBlueColor);
+    }
+
+    div.LoginForm div {
+        position: relative;
+        width: 85%;
+        height: 55%;
+        top: 0;
+    }
+
+    div.LoginForm div form {
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 2rem;
+        font-family: 'Calibri';
+        text-align: center;
+    }
+
+    div.LoginForm div form label {
+        padding-right: 1rem;
+    }
+
+    div.LoginForm div form input {
+        align-self: flex-start;
+        font-size: 1.5rem;
+        padding-right: 10rem;
+    }
+
+    div.LoginForm div form :nth-last-child(1) {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+        padding: .5rem 1rem;
+        font-size: 1.5rem;
+        position: relative;
+        right: -18vw;
+        cursor: pointer;
+    }
+
+    div.LoginForm div form :nth-last-child(1) :hover {
+        background-color: var(--seaBlueColor);
+    }
+
+    div.LoginForm div p {
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 0 .2rem 0 .2rem;
+    }
+
+    .buisnessCircle2 {
+        left: 62vw;
+        margin-top: -4.5vh;
+    }
+
+    .DoctorInfo {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 57vh;
+    }
+
+    .LineBreak {
+        width: 100%;
+    }
+
+    div.DoctorFiltering {
+        width: 60vw;
+        left: calc(-60vw - 2* 3px);
+    }
+
+    div.DoctorFiltering form {
+        padding: 0 12vw 0 12vw;
+    }
+
+    div.DoctorFiltering form label {
+        font-size: 1rem;
+    }
+
+    div.DoctorFiltering form input {
+        font-size: 1rem;
+    }
+
+    div.DoctorFiltering form :nth-last-child(1) {
+        margin: 15vh 4vw 0 4vw;
+        background-color: white;
+        color: var(--seaBlueColor);
+        border: solid 2px var(--seaBlueColor);
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    div.FilteringButton {
+        left: 60vw;
+        height: 15vh;
+    }
+
+    .FilteringButtonActive {
+        left: 60vw !important;
+    }
+
+    div.SearchResultsContent h2 {
+        padding-left: 5vw;
+    }
+
+
+    div.DoctorFiltering h2 i {
+        font-size: 7rem;
+        padding-left: 2vw;
+    }
+
+    div.DoctorFiltering form :nth-last-child(1) {
+        margin: 10vh 4vw 10vh 4vw;
+        background-color: white;
+        color: var(--seaBlueColor);
+        border: solid 2px var(--seaBlueColor);
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    div.DoctorFiltering h2 {
+        padding-top: .5vh;
+    }
+
+    div.doctorButtons button {
+        margin: 0 2vw 0 2vw;
+    }
+
+    .DoctorRegisterBackground {
+        background-position-y: 85%;
+        background-position-x: 90%;
+    }
+
+
+
+    .UserRegisterBackground {
+        background-position: 20% 35%;
+    }
+
+    .registerUser,
+    .registerDoctor {
+        font-size: 2.1rem;
+        padding: .7rem .2rem .7rem .2rem;
+
+    }
+
+    .registerDoctor {
+        top: 15rem;
+        left: 10vw;
+    }
+
+    .registerUser {
+        bottom: 15rem;
+        right: 10vw;
+    }
+
+    .RegisterUserForm,
+    .RegisterDoctorForm {
+
+        width: 80vw;
+        height: 75vh;
+        position: absolute;
+        background-color: #fff;
+        top: 22vh;
+        left: calc(50vw - 40vw);
+        border-radius: 25px;
+        z-index: 5;
+
+    }
+
+    .RegisterUserForm i,
+    .RegisterDoctorForm i {
+        margin-left: 65vw;
+        font-size: 3.2rem;
+    }
+
+    .RegisterUserForm form,
+    .RegisterDoctorForm form {
+        display: flex;
+        flex-direction: column;
+
+        padding-left: 8vw;
+        padding-right: 8vw;
+        padding-top: 0;
+    }
+
+    .RegisterUserForm form input,
+    .RegisterDoctorForm form input {
+        margin-bottom: 1vh;
+        border: 2px solid var(--darkBlueColor)
+    }
+
+
+    .RegisterUserForm form :nth-last-child(1),
+    .RegisterDoctorForm form :nth-last-child(1) {
+        margin-top: 1vh;
+        margin-left: 20vw;
+        margin-right: 15vw;
+        border: 2px solid black;
+        font-size: 2rem;
+    }
+
+
+    .RegisterUserForm form label,
+    .RegisterDoctorForm form label {
+        font-size: 2rem;
+    }
+
+    .EditProfile {
+        overflow-y: scroll;
+
+    }
+
+    .EditProfile form {
+        height: 200vh;
+    }
+
+    .EditProfile form input {
+        width: 50vw;
+        height: 7vh;
+    }
+
+    .EditProfile form select {
+        width: 30vw;
+        height: 10vh;
+    }
+
+    .EditProfile h2 {
+        padding-left: 15vw;
+    }
+
+    .EditProfile p {
+        align-self: center;
+        margin: 0;
+    }
+
+    .EditProfile form input:nth-last-of-type(1) {
+        height: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    div.UserDashboardInfo {
+        overflow-y: scroll;
+        height: 80vh;
+
+    }
+
+    .FormErrors {
+        margin-top: -14vh;
+    }
+
+    div.CircleAboutUsButton {
+        width: 60vh;
+        height: 60vh;
+        top: 30vh;
+        left: calc(50vw - 30vh);
+        line-height: 30vh;
+    }
+
+    div.CircleAboutUsButton p i {
+        font-size: 10rem;
+        padding-top: 2.5rem;
+    }
+
+    .DoctorEditProfile {
+        height: 653vh !important;
+    }
+
+    .Visit {
+        height: 55vh;
+    }
+
+    .RateContent {
+        height: 80vh;
+    }
+
+    .UserCreateAdminContent {
+        height: 50vh;
+    }
+
+    .UserCreateAdminContent button {
+        height: 10vh;
+    }
+
+    .UserCreateAdminContent div h2 {
+        font-size: 1.4rem;
+    }
+
+    .searchDoctorAvatar {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    div.DoctorProfile {
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (orientation:landscape) and (max-width:1024px) {
+
+    .RegisterExtra {
+        margin-left: 30vw !important;
+    }
+
+    .FormErrors {
+        margin-top: -10vh;
+    }
+}
+
+/* Computer version */
+@media screen and (min-width:1024px) {
+
+    html {
+        font-size: calc(.8vw + .8vh);
+
+    }
+
+    nav.Mobile,
+    .NavMobile,
+    nav.Mobile i {
+        display: none;
+    }
+
+    nav.Desktop {
+        display: block;
+        position: fixed;
+        top: 5vh;
+        right: 10vw;
+        width: 60vw;
+        min-width: 200px;
+        height: 12vh;
+        min-height: 56px;
+        background-color: var(--darkBlueColor);
+        border-radius: 30px;
+        z-index: 3;
+        transition: .7s;
+    }
+
+    nav.Desktop ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    nav.Desktop ul li {
+        height: 6vh;
+        line-height: 6vh;
+        box-sizing: content-box;
+    }
+
+    nav.Desktop ul li a {
+        color: white;
+        font-size: max(1rem 100px);
+        font-family: 'Calibri';
+    }
+
+    nav.Desktop ul li:nth-of-type(4) {
+        border: 2px solid var(--seaBlueColor);
+        border-radius: 30px;
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+    }
+
+    nav.Desktop ul li:nth-of-type(4):hover {
+        background-color: var(--seaBlueColor);
+    }
+
+    nav.Desktop ul li:nth-of-type(5) {
+        border: 2px solid var(--lightRedColor);
+        border-radius: 30px;
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+    }
+
+    nav.Desktop ul li:nth-of-type(5):hover {
+        background-color: var(--lightRedColor);
+    }
+
+    div.DasboardDesktopNav {
+        display: block;
+        position: absolute;
+        width: 15vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background-color: var(--darkBlueColor);
+        border-right: solid 5px var(--seaBlueColor);
+    }
+
+    div.DasboardDesktopNav hr {
+        color: var(--seaBlueColor);
+    }
+
+    div.DasboardDesktopNav ul {
+        width: 100%;
+        height: 45%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    div.DasboardDesktopNav ul li a {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .Banner {
+        height: 100vh;
+    }
+
+    .MainPageBannerPhoto {
+        background-image: url('/assets/img/big/mainBanner/doctorBannerBig.jpg');
+        background-size: cover;
+        background-position: center 10%;
+    }
+
+    .BannerCircle {
+        height: 40rem;
+        width: 40rem;
+        position: absolute;
+        top: 30vh;
+        left: -5%;
+        border-radius: 100%;
+        opacity: 0;
+        animation: 2.5s forwards 0s 1 mainBigPageBannerCircleAnimation;
+        margin-top: 0;
+    }
+
+    .BannerCircle div {
+        position: relative;
+        top: 25%;
+        left: 20%;
+        height: 50%;
+        width: 50%;
+        font-size: 4rem;
+        color: white;
+        font-weight: bold;
+        font-family: 'Calibri';
+    }
+
+    .BannerCircle div p {
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        animation: 5.5s forwards 0s 1 mainPageBannerCircleParagraphs;
+    }
+
+    .PageContent {
+        margin-right: 6vw;
+        margin-left: 6vw;
+    }
+
+    .PageContent div:nth-child(1) h2 {
+        margin-top: 3rem;
+    }
+
+    .BannerCircle div p:nth-child(1) {
+        font-size: 1.6rem;
+    }
+
+    .BannerCircle div p:nth-last-child(1) {
+        color: var(--seaBlueColor);
+    }
+
+    .PageContent div:nth-child(1) {
+        flex-direction: row;
+    }
+
+    .PageContent div:nth-child(1) p {
+        margin-top: 4rem;
+    }
+
+    .ContentAnimation {
+        margin-right: 6vw;
+        margin-left: 6vw;
+    }
+
+    .img1 {
+        margin-top: 4vh;
+    }
+
+    .buisnessCircle1 {
+        margin-top: 2vh;
+    }
+
+    footer :nth-child(1) {
+        height: 4vh;
+    }
+
+    footer :nth-child(1) p {
+        font-size: 30px;
+    }
+
+    footer :nth-child(2) a {
+        font-size: 20px;
+    }
+
+    .LoginForm {
+        width: 40vw;
+        height: 70vh;
+        left: calc(100vw - 50% - 80vw / 2);
+        top: 10rem;
+    }
+
+    div.LoginForm h2 {
+        font-size: 2rem;
+        font-family: 'Calibri';
+    }
+
+    div.LoginForm h2 i {
+        color: var(--seaBlueColor);
+    }
+
+    div.LoginForm div {
+        position: relative;
+        width: 85%;
+        height: 60%;
+    }
+
+    div.LoginForm div form {
+        padding-top: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 1.5rem;
+        font-family: 'Calibri';
+        text-align: center;
+    }
+
+    div.LoginForm div form input {
+        align-self: center;
+        font-size: 1rem;
+        border: 2px solid var(--darkBlueColor);
+        border-radius: 5px;
+    }
+
+    div.LoginForm div form :nth-last-child(1) {
+        margin-top: 1rem;
+        margin-bottom: 1.8rem;
+        padding: .5rem;
+        font-size: 1.5rem;
+        right: 0;
+    }
+
+    div.LoginForm div form :nth-last-child(1) :hover {
+        background-color: var(--seaBlueColor);
+    }
+
+    .FormErrors {
+        margin-top: 0;
+        margin-left: 27vw;
+    }
+
+    div.LoginForm div p {
+        text-align: center;
+        font-size: 1rem;
+        margin: 0 .2rem 0 .2rem;
+        color: grey;
+    }
+
+
+    div.LoginForm div p a {
+        font-weight: bold;
+        color: var(--seaBlueColor);
+    }
+
+    .SearchPageLayout {
+        display: flex;
+    }
+
+    .DoctorFiltering {
+        position: static !important;
+        left: 0 !important;
+        z-index: 0 !important;
+        width: 28vw !important;
+    }
+
+    div.FilteringButton {
+        display: none;
+    }
+
+    div.SearchResultsContent h2 {
+        display: none;
+    }
+
+    div.DoctorInfo {
+        height: 50vh;
+    }
+
+    div.DoctorFiltering form {
+        padding: 0 6vw 0 6vw;
+    }
+
+    div.DoctorFiltering h2 {
+        text-align: center;
+    }
+
+    div.DoctorFiltering h2 i {
+        font-size: 10rem;
+        padding-left: 0;
+    }
+
+    div.DoctorFiltering form :nth-last-child(1) {
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+
+
+    .RegisterUserForm form input,
+    .RegisterDoctorForm form input {
+        font-size: 2rem;
+    }
+
+    .RegisterUserForm,
+    .RegisterDoctorForm {
+        min-height: 377px;
+    }
+
+    .EditProfile form {
+        margin-top: 2vh;
+    }
+
+    .EditProfile form input,
+    .EditProfile form select {
+        font-size: 2rem;
+    }
+
+    div.EditProfile h2 {
+        padding-left: 70vw;
+    }
+
+    div.EditProfile h2 {
+        padding-left: 70vw;
+    }
+
+    div.EditProfile form input:nth-last-of-type(1) {
+        cursor: pointer;
+    }
+
+    div.UserDashboardInfo {
+        margin-left: 10vw;
+        margin-top: 2vh;
+    }
+
+    div.UserDashboardInfo {
+        overflow-y: none;
+        height: 100vh;
+    }
+
+    div.UserDashboardInfo h1 {
+        color: var(--darkBlueColor);
+        font-size: 3rem;
+    }
+
+    div.UserDashboardInfo h2 {
+        font-size: 2rem;
+    }
+
+    div.UserDashboardInfo p {
+        font-size: 3rem;
+        color: grey;
+    }
+
+    div.UserDashboardInfo i {
+        font-size: 6rem;
+        color: var(--seaBlueColor);
+    }
+
+    div.UserDashboardInfo div {
+        text-align: center;
+    }
+
+    div.UserDashboardInfo div p {
+        font-size: 1.5rem;
+        color: grey;
+    }
+
+    div.Banner div.AboutUs {
+        background-image: url('/assets/img/big/AboutUsBanner/aboutUsBannerBig.jpg');
+        background-position: 0;
+    }
+
+    div.CircleAboutUsButton {
+        width: 20rem;
+        height: 20rem;
+        top: 45vh;
+        left: calc(50vw - 10rem);
+        line-height: 18rem;
+    }
+
+    div.CircleAboutUsButton p i {
+        font-size: 10rem;
+        padding-top: 4rem;
+    }
+
+    .BannerBig {
+        height: 100vh;
+    }
+
+    .Visit,
+    .RateContent {
+        width: 70%;
+        height: 65vh;
+        margin-left: 20vw;
+        margin-right: 10vw;
+        margin-bottom: 5vh;
+    }
+
+    .ScrollDoctors h2:nth-child(1) {
+        margin-left: 65vw;
+    }
+
+    .UserCreateAdminContent {
+        width: 70%;
+        height: 35vh;
+        margin-left: 25vw;
+    }
+
+    .UserCreateAdminContent div h2 {
+        font-size: 1.35rem;
+    }
+
+    .UserCreateAdminContent button {
+        height: 5vh;
+        background-color: var(--darkBlueColor);
+        align-self: center;
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+    }
+
+    .UserCreateAdminContent button a {
+        color: white;
+        font-weight: bold;
+    }
+
+    .ScrollUsers h2.Title {
+        margin-left: 70vw;
+    }
+
+    .listSpace {
+        display: block;
+        width: 100%;
+        height: 22vh;
+    }
+
+    .RegisterVisitForm {
+        margin-top: 40vh;
+    }
+}
+
+
+
+@media screen and (min-width:1024px) and (max-height:450px) {
+
+    .BannerCircle {
+        height: 30vw;
+        width: 30vw;
+        margin-top: 10vh;
+        left: calc(50% - 30vw / 2);
+    }
+
+    .BannerCircle div {
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-height:370px) and (min-width:1024px) {
+
+
+    .PageContent {
+        display: none;
+    }
+}
+
+@media screen and (max-height:300px) and (min-width:1024px) {
+
+    nav.Desktop,
+    .BannerCircle,
+    .PageContent,
+    .title1,
+    .title2,
+    .title3,
+    .buisnessCircle1,
+    .buisnessCircle2,
+    .buisnessCircle3,
+    .img1,
+    .img2,
+    .img3 {
+        display: none;
+    }
+
+    footer :nth-child(1) {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width:1200px) and (max-height:577px) {
+    .BannerCircle {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .BannerCircle div {
+        font-size: 2.6rem;
+    }
+
+}
+
+@media screen and (max-height:270px) and (min-width:725px) {
+    .BannerCircle {
+        display: none;
+    }
+}
+
+@media screen and (max-height:200px) and (min-width:725px) {
+
+    .BannerCircle,
+    .PageContent,
+    .title1,
+    .title2,
+    .title3,
+    .buisnessCircle1,
+    .buisnessCircle2,
+    .buisnessCircle3,
+    .img1,
+    .img2,
+    .img3 {
+        display: none;
+    }
+}
+
+
+@keyframes mainSmallPageBannerCircleAnimation {
+    0% {}
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 43vh;
+        opacity: 1;
+    }
+}
+
+@keyframes mainSmallPageBannerCircleAnimationLANDSCAPE {
+    0% {}
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 35vh;
+        opacity: 1;
+    }
+}
+
+@keyframes mainSmallPageBannerCircleAnimationPORTRAIT {
+    0% {}
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 40vh;
+        opacity: 1;
+    }
+}
+
+@keyframes mainBigPageBannerCircleAnimation {
+    0% {}
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 3.2rem;
+        opacity: 1;
+    }
+}
+
+@keyframes mainPageBannerCircleParagraphs {
+    0% {}
+
+    10% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes AboutUsCircleChangeColor {
+    0% {}
+
+    50% {
+        background-color: var(--seaBlueColor);
+
+    }
+
+    100% {
+        background-color: var(--darkBlueColor);
+        ;
+    }
+}
